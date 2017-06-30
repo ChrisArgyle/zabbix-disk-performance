@@ -30,6 +30,8 @@ sudo chmod +x /usr/local/bin/lld-disks.py
 After that restart zabbix-agent
 ```sudo service zabbix-agent restart```
 
+You can also configure custom device skipping criteria.  Create a file called "skippable" in the same directory with lld-disks.py.  In this file place a comma-separated list of strings.  If any of the block devices partially match these strings it will be skipped
+
 Go to Zabbix's web interface, Configuration->Templates and import `Template Disk Performance.xml`.
 After that you should be able to monitor disk activity for all your disks.
 
